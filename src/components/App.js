@@ -1,6 +1,7 @@
 import logo from '../logo.svg';
 import '../App.css';
 import '../index.css';
+import React, {useState, useEffect} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Header from './Header'
 import Filter from './Filter'
@@ -13,6 +14,23 @@ import RestaurantPage from './RestaurantPage'
 
 function App() {
 
+
+  const [restaurants, setRestaurants] = useState([])
+  const [currentUser, setCurrentUser] = useState(null)
+
+  //fake auth
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/profile")
+  //   .then(r => r.json())
+  //   .then(data=> setUser(data))
+  // }, [])
+
+  //fetch all restaurants
+  useEffect (() => {
+    fetch('http://localhost:3000/restaurants')
+    .then(res => res.json())
+    .then(data => setRestaurants(data))
+  }, [])
 
 
 
@@ -28,7 +46,7 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/restaurants">
-            <RestaurantList />
+            <RestaurantList restaurants={restaurants}/>
           </Route>
           <Route exact path="/register">
             <Register />
@@ -37,7 +55,7 @@ function App() {
             <Profile />
           </Route>
           <Route exact path="/restaurants/:id">
-            <RestaurantPage />
+            <RestaurantPage user={currentUser}/>
           </Route>
           <Route path="*">
             <h1>404 not found</h1>

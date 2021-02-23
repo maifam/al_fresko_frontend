@@ -1,12 +1,25 @@
-function Restaurant() {
+import React from 'react'
+import {Link} from 'react-router-dom'
+
+function Restaurant({restaurant}) {
+
+    const {id, name, cuisine, address, money, od_img1} = restaurant
 
     return (
-        
-        <div>
-            <h2> Restaurant Card</h2>
-            <p>Pic</p>
-            <p>Info</p>
-        </div>
+        <>
+            <div className='card'>
+                <div className='card-info'> 
+                    <img className="image" src={od_img1} alt={name} />
+                    <br></br>
+                    <h2> {name}</h2>
+                    <p>{cuisine}</p>
+                    <p>{money}</p>
+                    <p>{address}</p>
+                    <br></br>
+                    <Link to={`/restaurants/${id}`}>Show Details</Link>
+                </div>
+            </div>
+        </>
        
     );
 }
