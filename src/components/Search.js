@@ -1,7 +1,15 @@
 function Search() {
 
     return (
-        <h2> Search </h2>
+        
+        <form>
+            <input
+            type="text"
+            placeholder="Search..."
+            
+            
+            />
+        </form>
     );
 }
     
