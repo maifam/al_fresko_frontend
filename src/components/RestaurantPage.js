@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom';
 import ReviewList from './ReviewList';
 
 
@@ -8,7 +8,7 @@ function RestaurantPage({user}) {
 
     const [restaurant, setRestaurant] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [reviews, setReviews] = useState([])
+    const [reviews, setReviews] = useState([]);
 
     const { id } = useParams(); //useParams for restaurant:id
 
@@ -38,6 +38,14 @@ function RestaurantPage({user}) {
         }
     })
 
+    function onAddReview(newReview) {
+        setReviews([...reviews, newReview])
+    }
+
+    function onDeleteReview(id){
+        const updatedReviews = reviews.filter((review) => review.id !== id);
+        setReviews(updatedReviews)
+    }
     if (!isLoaded) return <h2>Loading...</h2>;
 
     const { name, cuisine, address, website, hours, setup, covid, menu, phone, money, od_img1, od_img2, fd_img } = restaurant;
@@ -63,7 +71,7 @@ function RestaurantPage({user}) {
                 
             </div>
 
-            <ReviewList id={id} reviews={filteredReviews} user={user}/>
+            <ReviewList restaurantId={id} reviews={filteredReviews} user={user} onAddReview={onAddReview} onDeleteReview={onDeleteReview}/>
 
         </div>
        

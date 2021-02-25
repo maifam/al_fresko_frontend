@@ -1,9 +1,13 @@
+
 import NavBar from './NavBar'
 
-function Header() {
+function Header({currentUser, setCurrentUser}) {
 
     return (
-        <h1> Header </h1>
+        <>
+            <h1> al 'freskō</h1>
+            <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        </>
     );
 }
     

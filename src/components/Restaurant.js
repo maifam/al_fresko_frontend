@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-function Restaurant({restaurant}) {
+function Restaurant({restaurant, currentUser}) {
 
     const {id, name, cuisine, address, money, od_img1} = restaurant
 
@@ -16,7 +16,11 @@ function Restaurant({restaurant}) {
                     <p>{money}</p>
                     <p>{address}</p>
                     <br></br>
-                    <Link to={`/restaurants/${id}`}>Show Details</Link>
+                    {currentUser ? (
+                        <Link to={`/restaurants/${id}`}>Show Details</Link>
+                    ) : (
+                        <Link to={`/login`}>Show Details</Link>
+                    )}
                 </div>
             </div>
         </>

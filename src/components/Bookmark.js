@@ -1,9 +1,11 @@
-function Bookmark() {
+function Bookmark({bookmark}) {
+
+  console.log(bookmark.restaurant.name)
 
     return (
         
         <div>
-            <h4> Bookmark </h4>
+            <p>{bookmark.restaurant.name}</p>
         </div>
        
     );

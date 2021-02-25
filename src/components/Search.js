@@ -5,7 +5,7 @@ function Search() {
         <form>
             <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search restaurant..."
             
             
             />

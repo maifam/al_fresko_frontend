@@ -1,9 +1,9 @@
 import Restaurant from './Restaurant'
 
-function RestaurantList({restaurants}) {
+function RestaurantList({restaurants, currentUser}) {
 
     const restaurantsToDisplay = restaurants.map(restaurant => {
-        return <Restaurant key={restaurant.id} restaurant={restaurant}/>
+        return <Restaurant key={restaurant.id} restaurant={restaurant} currentUser={currentUser}/>
     })
     return (
         <>

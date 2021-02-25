@@ -1,11 +1,18 @@
 import React from 'react'
 
-function Review({review}) {
+function Review({review, onDeleteReview}) {
 
     // const {name, image} = user
     const {likes, id, content, rating, user} = review
 
-    console.log(user)
+    function handleDeleteClick(){
+        fetch(`http://localhost:3000/reviews/${id}`, {
+            method: 'DELETE',
+        })
+        onDeleteReview(id)
+    }
+
+
 
     return (
         
@@ -15,6 +22,7 @@ function Review({review}) {
             <p>{user.username}</p>
             <p>{content}</p>
             <p>{rating}</p>
+            <button onClick={handleDeleteClick}>Delete</button>
            
            
         </div>

@@ -1,12 +1,18 @@
 import BookmarkList from './BookmarkList';
 
-function Profile() {
+function Profile({user}) {
+
+  
+
+    console.log(user)
 
     return (
         
         <div>
             <h2> Profile </h2>
-            <BookmarkList/>
+            <img className="image" src={user.image} alt={user.username} />
+            <p>{user.name}</p> 
+            <BookmarkList bookmarks={user.bookmarks}/>
            
         </div>
        

@@ -11,19 +11,23 @@ import Profile from './Profile'
 import Login from './Login'
 import Register from './Register'
 import RestaurantPage from './RestaurantPage'
+import Home from './Home'
 
 function App() {
 
 
   const [restaurants, setRestaurants] = useState([])
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState()
 
-  //fake auth
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/profile")
-  //   .then(r => r.json())
-  //   .then(data=> setUser(data))
-  // }, [])
+  // fake auth
+  useEffect(() => {
+    fetch("http://localhost:3000/profile")
+    .then(r => r.json())
+    .then(data=> {
+      setCurrentUser(data)
+      console.log(data)
+    })
+  }, [])
 
   //fetch all restaurants
   useEffect (() => {
@@ -32,34 +36,46 @@ function App() {
     .then(data => setRestaurants(data))
   }, [])
 
+  console.log(currentUser)
 
 
   return (
     <>
       <div>
-        <Header/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         <Filter />
         <Search />
 
         <Switch>
+
+          <Route exact path="/">
+            <Home />
+          </Route>
+
           <Route exact path="/login">
-            <Login />
+            <Login setCurrentUser={setCurrentUser}/>
           </Route>
+
           <Route exact path="/restaurants">
-            <RestaurantList restaurants={restaurants}/>
+            <RestaurantList currentUser={currentUser} restaurants={restaurants}/>
           </Route>
+
           <Route exact path="/register">
-            <Register />
+            <Register setCurrentUser={setCurrentUser}/>
           </Route>
+
           <Route exact path="/profile">
-            <Profile />
+            <Profile user={currentUser} setCurrentUser={setCurrentUser}/>
           </Route>
+
           <Route exact path="/restaurants/:id">
             <RestaurantPage user={currentUser}/>
           </Route>
+
           <Route path="*">
             <h1>404 not found</h1>
           </Route>
+
         </Switch>
       </div>
     </>
