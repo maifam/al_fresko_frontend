@@ -69,6 +69,7 @@ function RestaurantPage({user}) {
                 <p>COVID Precautions: {covid}</p>
                 <p><a href={website} target='_blank'>Visit Website</a></p>
                 <p><a href={menu} target='_blank'>View Menu</a></p>
+                <button>Bookmark</button>
                 
             </div>
 

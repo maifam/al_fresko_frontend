@@ -12,9 +12,9 @@ function Review({review, onDeleteReview}) {
         onDeleteReview(id)
     }
 
-    function handleEditClick(){
-        
-    }
+    // function handleEditClick(){
+
+    // }
 
     console.log(user)
     return (
