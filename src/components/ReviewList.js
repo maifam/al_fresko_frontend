@@ -1,21 +1,29 @@
+import React, {useState} from 'react'
 import Review from './Review';
 import NewReviewForm from './NewReviewForm';
 
 function ReviewList({restaurantId, user, reviews, onAddReview, onDeleteReview}) {
 
+    const [reviewClick, setReviewClick] = useState(false)
+
     const reviewsToDisplay = reviews.map(review => {
-        return <Review key={review.id} review={review} user={user} onDeleteReview={onDeleteReview}/>
+        return <Review key={review.id} review={review} user={user} onDeleteReview={onDeleteReview} />
         // console.log(review)
     })
 
+    function handleReviewClick(){
+        setReviewClick(!reviewClick)
+    }
     
 
     return (
         
         <div>
             {reviewsToDisplay}          
-
-           <NewReviewForm restaurantId={restaurantId} user={user} onAddReview={onAddReview} />
+            <button onClick={handleReviewClick}>Leave a Review</button>
+            {reviewClick ? (
+                <NewReviewForm restaurantId={restaurantId} user={user} setReviewClick={setReviewClick} onAddReview={onAddReview} />
+            ): null}
         </div>
        
     );

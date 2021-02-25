@@ -1,13 +1,12 @@
-function Search() {
+function Search({setSearch}) {
 
     return (
         
         <form>
             <input
             type="text"
-            placeholder="Search restaurant..."
-            
-            
+            placeholder="Search by cuisine..."
+            onChange={(e)=> setSearch(e.target.value)}
             />
         </form>
     );

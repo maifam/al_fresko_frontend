@@ -12,8 +12,11 @@ function Review({review, onDeleteReview}) {
         onDeleteReview(id)
     }
 
+    function handleEditClick(){
+        
+    }
 
-
+    console.log(user)
     return (
         
         <div>
@@ -23,6 +26,7 @@ function Review({review, onDeleteReview}) {
             <p>{content}</p>
             <p>{rating}</p>
             <button onClick={handleDeleteClick}>Delete</button>
+            {user ? (<button > Edit</button>) : null }
            
            
         </div>

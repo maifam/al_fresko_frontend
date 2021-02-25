@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function NewReviewForm({ user, restaurantId, onAddReview}) {
+function NewReviewForm({ user, restaurantId, onAddReview, setReviewClick}) {
 
     const [content, setContent] = useState('');
 
@@ -26,12 +26,13 @@ function NewReviewForm({ user, restaurantId, onAddReview}) {
             onAddReview(data)
         })
         setContent('')
+        setReviewClick(false)
     }    
 
     return (
         
         <div>
-            <h3> NewReviewForm </h3>
+            
             <form onSubmit={handleSubmitReview}>
                 <label>
                     Content: 

@@ -4,8 +4,7 @@ import '../index.css';
 import React, {useState, useEffect} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Header from './Header'
-import Filter from './Filter'
-import Search from './Search'
+
 import RestaurantList from './RestaurantList'
 import Profile from './Profile'
 import Login from './Login'
@@ -18,6 +17,7 @@ function App() {
 
   const [restaurants, setRestaurants] = useState([])
   const [currentUser, setCurrentUser] = useState()
+  
 
   // fake auth
   useEffect(() => {
@@ -43,8 +43,6 @@ function App() {
     <>
       <div>
         <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-        <Filter />
-        <Search />
 
         <Switch>
 

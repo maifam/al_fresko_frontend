@@ -1,9 +1,20 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 function Restaurant({restaurant, currentUser}) {
 
     const {id, name, cuisine, address, money, od_img1} = restaurant
+    const history = useHistory()
+
+    function handleShowDetails(){
+        if (currentUser) {
+            history.push(`/restaurants/${id}`)
+        }else {
+            alert('Please login to see more details!')
+            history.push('/login')
+        }
+    }
+
 
     return (
         <>
@@ -16,16 +27,20 @@ function Restaurant({restaurant, currentUser}) {
                     <p>{money}</p>
                     <p>{address}</p>
                     <br></br>
-                    {currentUser ? (
-                        <Link to={`/restaurants/${id}`}>Show Details</Link>
-                    ) : (
-                        <Link to={`/login`}>Show Details</Link>
-                    )}
+                    <button onClick={handleShowDetails}>Show Details</button>
                 </div>
             </div>
         </>
        
-    );
-}
+       );
+    }
     
-export default Restaurant;
+    export default Restaurant;
+
+
+    // <Link to={`/login`}>Show Details</Link>
+
+    // {currentUser ? (
+    //     <Link to={`/restaurants/${id}`}>Show Details</Link>
+    // ) : (
+    //     <Link to={`/login`}>Show Details</Link>)}

@@ -4,6 +4,7 @@ import ReviewList from './ReviewList';
 
 
 
+
 function RestaurantPage({user}) {
 
     const [restaurant, setRestaurant] = useState(null);
