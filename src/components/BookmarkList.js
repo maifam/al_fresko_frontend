@@ -1,10 +1,10 @@
 import Bookmark from './Bookmark';
 
-function BookmarkList({bookmarks}) {
+function BookmarkList({bookmarks, onRemoveBookmark}) {
 
     console.log(bookmarks)
-    const bookmarksToDisplay = bookmarks.map(bm => {
-        return <Bookmark key={bm.id} bookmark={bm}/>
+    const bookmarksToDisplay = bookmarks.map(bookmark => {
+        return <Bookmark key={bookmark.id} bookmark={bookmark} onRemoveBookmark={onRemoveBookmark}/>
     })
 
     return (

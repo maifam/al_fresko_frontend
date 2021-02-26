@@ -3,13 +3,12 @@ import {useParams} from 'react-router-dom';
 import ReviewList from './ReviewList';
 
 
-
-
-function RestaurantPage({user}) {
+function RestaurantPage({user, onAddBookmark}) {
 
     const [restaurant, setRestaurant] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [reviews, setReviews] = useState([]);
+    const [newBookmark, setNewBookmark] = useState(null) 
 
     const { id } = useParams(); //useParams for restaurant:id
 
@@ -47,6 +46,27 @@ function RestaurantPage({user}) {
         const updatedReviews = reviews.filter((review) => review.id !== id);
         setReviews(updatedReviews)
     }
+
+    function handleAddNewBookmark(e){
+        e.preventDefault();
+       
+        const newBookmarkObj = {
+            user_id: user.id,
+            restaurant_id: id
+        }
+
+        fetch('http://localhost:3000/bookmarks', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify(newBookmarkObj)
+        })
+        .then(res => res.json())
+        .then(data => onAddBookmark(data))
+    }
+
+
     if (!isLoaded) return <h2>Loading...</h2>;
 
     const { name, cuisine, address, website, hours, setup, covid, menu, phone, money, od_img1, od_img2, fd_img } = restaurant;
@@ -69,7 +89,7 @@ function RestaurantPage({user}) {
                 <p>COVID Precautions: {covid}</p>
                 <p><a href={website} target='_blank'>Visit Website</a></p>
                 <p><a href={menu} target='_blank'>View Menu</a></p>
-                <button>Bookmark</button>
+                <button onClick={handleAddNewBookmark}>Bookmark</button>
                 
             </div>
 

@@ -17,6 +17,7 @@ function App() {
 
   const [restaurants, setRestaurants] = useState([])
   const [currentUser, setCurrentUser] = useState()
+  const [bookmarks, setBookmarks] = useState([])
   
 
   // fake auth
@@ -36,7 +37,22 @@ function App() {
     .then(data => setRestaurants(data))
   }, [])
 
-  console.log(currentUser)
+  //fetch all bookmarks
+  useEffect(() => {
+    fetch('http://localhost:3000/bookmarks')
+    .then(res => res.json())
+    .then(data => setBookmarks(data))
+  }, [])
+
+  function onAddBookmark(newBookmark){
+    setBookmarks([...bookmarks, newBookmark])
+  }
+
+  function onRemoveBookmark(id){
+    const updatedBookmarks = bookmarks.filter((bookmark) => bookmark.id !== id);
+        setBookmarks(updatedBookmarks)
+  }
+  
 
 
   return (
@@ -63,11 +79,11 @@ function App() {
           </Route>
 
           <Route exact path="/profile">
-            <Profile user={currentUser} setCurrentUser={setCurrentUser}/>
+            <Profile user={currentUser} setCurrentUser={setCurrentUser} bookmarks={bookmarks} onRemoveBookmark={onRemoveBookmark}/>
           </Route>
 
           <Route exact path="/restaurants/:id">
-            <RestaurantPage user={currentUser}/>
+            <RestaurantPage user={currentUser} onAddBookmark={onAddBookmark}/>
           </Route>
 
           <Route path="*">
