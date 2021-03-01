@@ -7,17 +7,36 @@ function Register({setCurrentUser}) {
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
+    const [errors, setErrors] = useState([]);
     const history = useHistory();
 
     function handleSubmit(e){
         e.preventDefault();
+
+        const registerObj = {
+            username, 
+            password, 
+            name, 
+            image
+        }
+        
         fetch('http://localhost:3000/signup', {
             method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(registerObj)
         })
         .then((r)=>r.json())
-        .then((user) => {
-            setCurrentUser(user);
-            history.push('/restaurants');
+        .then((data) => {
+            if (data.errors) {
+                setErrors(data.errors)
+            }else {
+                const {user, token} = data;
+                localStorage.setItem('token', token)
+                setCurrentUser(user);
+                history.push('/restaurants');
+            }
         })
     }    
     
@@ -43,12 +62,14 @@ function Register({setCurrentUser}) {
                     image:
                     <input type="text" name="image" value={image} onChange={(e)=> setImage(e.target.value)}/>
                 </label>
+                {errors.map(error => {
+                    return <p key={error}>{errors}</p>
+                })}
                 <input type="submit" value="Submit" />
             </form>
             <p>
                Already have an account? <Link to='/login'>Login</Link>
             </p>
-           
         </div>
        
     );

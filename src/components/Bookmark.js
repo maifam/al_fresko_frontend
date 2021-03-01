@@ -2,17 +2,21 @@ import { useHistory} from 'react-router-dom'
 
 function Bookmark({bookmark, onRemoveBookmark}) {
 
+    const {id} = bookmark
     const history = useHistory();
 
     function handlePageClick(){
         history.push(`/restaurants/${bookmark.restaurant_id}`)
     }
 
+    console.log(id)
+
     function handleRemoveBookmark(){
-        fetch(`http://localhost:3000/bookmarks/${bookmark.id}`, {
+        
+        fetch(`http://localhost:3000/bookmarks/${id}`, {
             method: 'DELETE',
         })
-        onRemoveBookmark(bookmark.id)
+        onRemoveBookmark(id)
     }
 
     return (

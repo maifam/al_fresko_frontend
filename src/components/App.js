@@ -22,12 +22,18 @@ function App() {
 
   // fake auth
   useEffect(() => {
-    fetch("http://localhost:3000/profile")
-    .then(r => r.json())
-    .then(data=> {
-      setCurrentUser(data)
-      console.log(data)
-    })
+    const token = localStorage.getItem('token')
+    if (token) {
+      fetch("http://localhost:3000/profile", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(r => r.json())
+      .then(user=> {
+        setCurrentUser(user)
+      })
+    }
   }, [])
 
   //fetch all restaurants
@@ -79,7 +85,11 @@ function App() {
           </Route>
 
           <Route exact path="/profile">
-            <Profile user={currentUser} setCurrentUser={setCurrentUser} bookmarks={bookmarks} onRemoveBookmark={onRemoveBookmark}/>
+            {currentUser ? <Profile user={currentUser} 
+                            setCurrentUser={setCurrentUser} 
+                            bookmarks={bookmarks} 
+                            onRemoveBookmark={onRemoveBookmark}/> 
+            : <h1> Must be logged in </h1> }
           </Route>
 
           <Route exact path="/restaurants/:id">

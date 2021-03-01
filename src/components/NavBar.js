@@ -8,6 +8,7 @@ function NavBar({currentUser, setCurrentUser}) {
     const history = useHistory();
 
     function logout(){
+        localStorage.removeItem('token');
         setCurrentUser(null);
         history.push('/')
     }
