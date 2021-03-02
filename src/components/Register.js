@@ -40,7 +40,6 @@ function Register({setCurrentUser}) {
         })
     }    
     
-    
     return (
         
         <div>

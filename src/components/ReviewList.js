@@ -7,7 +7,7 @@ function ReviewList({restaurantId, user, reviews, onAddReview, onDeleteReview}) 
     const [reviewClick, setReviewClick] = useState(false)
 
     const reviewsToDisplay = reviews.map(review => {
-        return <Review key={review.id} review={review} user={user} onDeleteReview={onDeleteReview} onAddReview={onAddReview} />
+        return <Review key={review.id} review={review} currentUser={user} onDeleteReview={onDeleteReview}/>
         // console.log(review)
     })
 
@@ -23,7 +23,7 @@ function ReviewList({restaurantId, user, reviews, onAddReview, onDeleteReview}) 
             {reviewsToDisplay}          
             <button onClick={handleReviewClick}>Leave a Review</button>
             {reviewClick ? (
-                <NewReviewForm restaurantId={restaurantId} user={user} setReviewClick={setReviewClick} onAddReview={onAddReview} />
+                <NewReviewForm restaurantId={restaurantId} currentUser={user} setReviewClick={setReviewClick} onAddReview={onAddReview} />
             ): null}
         </div>
        

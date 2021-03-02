@@ -16,11 +16,11 @@ function App() {
 
 
   const [restaurants, setRestaurants] = useState([])
-  const [currentUser, setCurrentUser] = useState()
+  const [currentUser, setCurrentUser] = useState(true)
   const [bookmarks, setBookmarks] = useState([])
   
 
-  // fake auth
+  // real auth
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -43,11 +43,18 @@ function App() {
     .then(data => setRestaurants(data))
   }, [])
 
+  // console.log(currentUser)
+
   //fetch all bookmarks
   useEffect(() => {
+    if (currentUser) {
     fetch('http://localhost:3000/bookmarks')
     .then(res => res.json())
-    .then(data => setBookmarks(data))
+    .then(data => {
+      // let currentUserBookmark = data.filter(dt => dt.user_id === currentUser.id)
+      // setBookmarks(currentUserBookmark)
+      setBookmarks(data)
+    })}
   }, [])
 
   function onAddBookmark(newBookmark){
@@ -56,10 +63,9 @@ function App() {
 
   function onRemoveBookmark(id){
     const updatedBookmarks = bookmarks.filter((bookmark) => bookmark.id !== id);
-        setBookmarks(updatedBookmarks)
+      setBookmarks(updatedBookmarks)
   }
   
-
 
   return (
     <>
@@ -93,7 +99,7 @@ function App() {
           </Route>
 
           <Route exact path="/restaurants/:id">
-            <RestaurantPage user={currentUser} onAddBookmark={onAddBookmark}/>
+            <RestaurantPage user={currentUser} bookmarks={bookmarks} setBookmarks={setBookmarks} onAddBookmark={onAddBookmark}/>
           </Route>
 
           <Route path="*">

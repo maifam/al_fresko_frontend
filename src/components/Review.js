@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function Review({review, onDeleteReview, onAddReview}) {
+function Review({review, onDeleteReview,currentUser}) {
 
     const {likes, id, content, rating, user} = review
 
@@ -10,7 +10,6 @@ function Review({review, onDeleteReview, onAddReview}) {
     const [currentContent, setCurrentContent] = useState(content)
     const [currentRating, setCurrentRating] = useState(rating)
 
-    // const {name, image} = user
 
     function handleDeleteClick(){
         fetch(`http://localhost:3000/reviews/${id}`, {
@@ -75,9 +74,10 @@ function Review({review, onDeleteReview, onAddReview}) {
                 <p>{user.username}</p>
                 <p>{currentContent}</p>
                 <p>{currentRating}</p>
-                <button onClick={handleDeleteClick}>Delete</button>
                 
-                {user ? (<button onClick={handleEditClick}>  Edit</button>) : null }
+                {currentUser.id === review.user.id ? (<button onClick={handleDeleteClick}>Delete</button>) : null}
+                
+                {currentUser.id === review.user.id ? (<button onClick={handleEditClick}>  Edit</button>) : null }
             </div>)}
         </>
     

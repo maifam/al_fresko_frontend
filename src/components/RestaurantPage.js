@@ -3,14 +3,15 @@ import {useParams} from 'react-router-dom';
 import ReviewList from './ReviewList';
 
 
-function RestaurantPage({user, onAddBookmark}) {
+function RestaurantPage({user, bookmarks, setBookmarks, onAddBookmark}) {
 
     const [restaurant, setRestaurant] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [reviews, setReviews] = useState([]);
-    const [newBookmark, setNewBookmark] = useState(null) 
+    
 
     const { id } = useParams(); //useParams for restaurant:id
+
 
 //fetch for one restaurant 
     useEffect(() => {
@@ -64,6 +65,7 @@ function RestaurantPage({user, onAddBookmark}) {
         })
         .then(res => res.json())
         .then(data => onAddBookmark(data))
+        alert('Bookmarked!')
     }
 
 
@@ -71,6 +73,14 @@ function RestaurantPage({user, onAddBookmark}) {
 
     const { name, cuisine, address, website, hours, setup, covid, menu, phone, money, od_img1, od_img2, fd_img } = restaurant;
     
+
+    // const alreadyBookmarked = (user.bookmarks.map(bookmark => {
+    //     return bookmark.restaurant_id
+    // }))
+
+    // console.log(alreadyBookmarked.includes(restaurant.id))
+    // console.log(id)
+
 
     return (
         
@@ -89,7 +99,8 @@ function RestaurantPage({user, onAddBookmark}) {
                 <p>COVID Precautions: {covid}</p>
                 <p><a href={website} target='_blank'>Visit Website</a></p>
                 <p><a href={menu} target='_blank'>View Menu</a></p>
-                <button onClick={handleAddNewBookmark}>Bookmark</button>
+                {bookmarks.map(bm => bm.restaurant_id).includes(restaurant.id) ?  null : (<button onClick={handleAddNewBookmark}>Bookmark</button>)}
+                
                 
             </div>
 

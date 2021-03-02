@@ -19,7 +19,7 @@ function Profile({user, bookmarks, onRemoveBookmark}) {
             <h2> Profile </h2>
             <img className="image" src={user.image} alt={user.username} />
             <p>{user.name}</p> 
-            <BookmarkList bookmarks={myBookmarks} onRemoveBookmark={onRemoveBookmark}/>
+            <BookmarkList bookmarks={myBookmarks} onRemoveBookmark={onRemoveBookmark} currentUser={user}/>
            
         </div>
        
