@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Restaurant from './Restaurant';
 import Filter from './Filter';
 import Search from './Search';
+import { Grid } from 'semantic-ui-react';
 
 function RestaurantList({restaurants, currentUser}) {
 
@@ -26,12 +27,16 @@ function RestaurantList({restaurants, currentUser}) {
         return <Restaurant key={restaurant.id} restaurant={restaurant} currentUser={currentUser}/>
     })
     return (
-        <>
-            <h1> Restaurant List </h1>
+        <div className='restaurant-list'>
+            
             <Filter setSortBy={setSortBy} />
             <Search setSearch={setSearch}/>
-            {restaurantsToDisplay}
-        </>
+            <br></br>
+            <br></br>
+            <br></br>
+            {restaurantsToDisplay}    
+            
+        </div>
     );
 }
     

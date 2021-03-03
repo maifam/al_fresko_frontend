@@ -4,10 +4,14 @@ import NavBar from './NavBar'
 function Header({currentUser, setCurrentUser}) {
 
     return (
-        <>
-            <h1> al 'freskō</h1>
-            <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        </>
+        <div className='header-bar'>
+            <div className='logo'>
+                <h1> al 'freskō</h1>
+            </div>
+            <div className='nav'>
+                <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            </div>
+        </div>
     );
 }
     

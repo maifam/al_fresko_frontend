@@ -1,5 +1,7 @@
-import React from 'react'
-import { useHistory} from 'react-router-dom'
+import React from 'react';
+import { useHistory} from 'react-router-dom';
+import { Card, Icon, Rating, Button} from 'semantic-ui-react';
+
 
 function Restaurant({restaurant, currentUser}) {
 
@@ -17,30 +19,50 @@ function Restaurant({restaurant, currentUser}) {
 
 
     return (
-        <>
-            <div className='card'>
-                <div className='card-info'> 
-                    <img className="image" src={od_img1} alt={name} />
-                    <br></br>
-                    <h2> {name}</h2>
-                    <p>{cuisine}</p>
-                    <p>{money}</p>
-                    <p>{address}</p>
-                    <br></br>
-                    <button onClick={handleShowDetails}>Show Details</button>
-                </div>
-            </div>
-        </>
+
+       <div className='restaurant-card'>
+            <Card>
+                <img src={od_img1} wrapped ui={false} onClick={handleShowDetails} />
+                <Card.Content>
+                    <Card.Header>{name}</Card.Header>
+                    <Card.Meta>
+                        <span>
+                            <Rating disabled icon='heart' maxRating={money}  />
+                        </span>
+                    </Card.Meta>
+                    <Card.Description>
+                        <a>
+                            <Icon name='map marker alternate'/>{address}
+                        </a>
+                    </Card.Description>
+                    
+                </Card.Content>
+                <Card.Content extra>
+                    <a>
+                        <Icon name='utensils' />
+                        {cuisine}
+                    </a>
+                </Card.Content>
+            </Card>
+        </div>
+    
        
-       );
-    }
+  );
+}
     
     export default Restaurant;
 
 
-    // <Link to={`/login`}>Show Details</Link>
 
-    // {currentUser ? (
-    //     <Link to={`/restaurants/${id}`}>Show Details</Link>
-    // ) : (
-    //     <Link to={`/login`}>Show Details</Link>)}
+    // <div className='card'>
+    //     <div className='card-info'> 
+    //         <img className="image" src={od_img1} alt={name} />
+    //         <br></br>
+    //         <h2> {name}</h2>
+    //         <p>{cuisine}</p>
+    //         <p>{money}</p>
+    //         <p>{address}</p>
+    //         <br></br>
+    //         <button onClick={handleShowDetails}>Show Details</button>
+    //     </div>
+    // </div>

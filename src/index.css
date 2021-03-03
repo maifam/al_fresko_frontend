@@ -1,10 +1,12 @@
 body {
-  margin: 50px;
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-left: 50px;
+ 
 }
 
 code {
@@ -12,7 +14,23 @@ code {
     monospace;
 }
 
-.card {
+.header-bar {
+  background-color: #ffffff;
+  padding:45px;
+  text-align: left;
+}
+
+.logo{
+  float: left;
+  padding-left: 20px;
+}
+
+.nav {
+  float: right;
+  padding-right: 30px;
+}
+
+.restuarant-card {
   margin: 1rem;
   box-shadow: 0 0 7px 0 #ddd;
   border-radius: 5px;
@@ -31,4 +49,11 @@ code {
   border-radius: 4px;
   width: 200px;
   height: 150px;
+  cursor: pointer;
+}
+
+.restaurant-list{
+  display: grid;
+  grid-template: auto 2fr auto / auto 2fr auto;
+  
 }

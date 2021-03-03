@@ -4,7 +4,6 @@ import '../index.css';
 import React, {useState, useEffect} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Header from './Header'
-
 import RestaurantList from './RestaurantList'
 import Profile from './Profile'
 import Login from './Login'
