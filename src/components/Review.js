@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Rating, Comment, Form, Button, Divider} from 'semantic-ui-react';
+import {Rating, Comment, Button, Divider} from 'semantic-ui-react';
 
 function Review({review, onDeleteReview,currentUser}) {
 
@@ -94,7 +94,7 @@ function Review({review, onDeleteReview,currentUser}) {
                             </Comment.Content>
 
                         </Comment>
-
+                        <Divider horizontal></Divider>
                     </Comment.Group>
                 )}
         </> 

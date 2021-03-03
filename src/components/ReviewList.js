@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Review from './Review';
 import NewReviewForm from './NewReviewForm';
-import {Header, Divider, Comment, Button} from 'semantic-ui-react';
+import {Grid,  Label, Button, Divider} from 'semantic-ui-react';
 
 
 function ReviewList({restaurantId, user, reviews, onAddReview, onDeleteReview}) {
@@ -19,18 +19,28 @@ function ReviewList({restaurantId, user, reviews, onAddReview, onDeleteReview}) 
     
 
     return (
+        <div className='reviews-list'>
+            <Grid >
+                <Grid.Column>
+                
+                    <Label as='a' color='teal' ribbon>
+                        Reviews
+                    </Label>
+                        <span>{reviewsToDisplay}</span>
+
+                    <Divider horizontal />
+
+                <div id='review-button'>
+
+                    <Button basic color='teal' onClick={handleReviewClick}>Leave a Review</Button>
+                    {reviewClick ? <NewReviewForm restaurantId={restaurantId} currentUser={user} setReviewClick={setReviewClick} onAddReview={onAddReview}/>: null}
+                
+                </div>
+                </Grid.Column>
+            </Grid>
+        </div>
         
-        <Comment.Group>
-            <Header as='h2' id='reviews-list' dividing>
-                Reviews 
-            </Header>
-            {reviewsToDisplay}
-
-        <Divider horizontal />
-
-        <Button basic color='white' onClick={handleReviewClick}>Leave a Review</Button>
-        {reviewClick ? <NewReviewForm restaurantId={restaurantId} currentUser={user} setReviewClick={setReviewClick} onAddReview={onAddReview}/>: null}
-    </Comment.Group>
+       
        
     );
 }
@@ -46,3 +56,18 @@ export default ReviewList;
     <NewReviewForm restaurantId={restaurantId} currentUser={user} setReviewClick={setReviewClick} onAddReview={onAddReview} />
 ): null}
 </div> */}
+
+
+// import {Header, Divider, Comment, Button} from 'semantic-ui-react';
+
+{/* <Comment.Group>
+<Header as='h2' id='reviews-list' dividing>
+    Reviews 
+</Header>
+{reviewsToDisplay}
+
+<Divider horizontal />
+
+<Button basic color='white' onClick={handleReviewClick}>Leave a Review</Button>
+{reviewClick ? <NewReviewForm restaurantId={restaurantId} currentUser={user} setReviewClick={setReviewClick} onAddReview={onAddReview}/>: null}
+</Comment.Group> */}

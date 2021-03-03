@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 50px;
+  padding-left: 70px;
+  padding-right:70px;
  
 }
 
@@ -14,46 +15,86 @@ code {
     monospace;
 }
 
-.header-bar {
-  background-color: #ffffff;
-  padding:45px;
-  text-align: left;
+.logo{
+  float: center;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  size: 50px;
 }
 
-.logo{
-  float: left;
-  padding-left: 20px;
+.header-bar {
+  background-color: #ffffff;
+  padding-left:100px;
+  padding-right:60px;
+  text-align: left;
 }
 
 .nav {
   float: right;
   padding-right: 30px;
+  padding-top: 80px;
 }
 
 .restuarant-card {
-  margin: 1rem;
-  box-shadow: 0 0 7px 0 #ddd;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 250px;
+  padding:10x;
+  
 }
 
-.card-info {
-  text-align: center;
+#card-info {
+  text-align: left;
   align-content: center;
   padding: 15px;
-  color: #799351
+  text-decoration-color: #799351 !important;
+  height: 420px;
+  width: 300px;
+  border-spacing: 2rem;
 }
 
-.image {
+.info-img{
+  width: 285px;
+  height: 240px;
+  justify-content:space-around;
+  float:center;
+  overflow: hidden;
+  padding: 4px;
+}
+
+#card-img {
   border-radius: 4px;
-  width: 200px;
-  height: 150px;
+  width: 260px;
+  height: 220px;
+  cursor: pointer;
+  justify-content: space-between;
   cursor: pointer;
 }
 
+
 .restaurant-list{
   display: grid;
-  grid-template: auto 2fr auto / auto 2fr auto;
+  grid-template: auto 1fr auto / auto 1fr auto;
+  padding-top: -50px;
+  padding-left: 80px;
+  padding-right: 80px;
   
+}
+
+#restaurant-page-info{
+  padding-left: 80px;
+  text-align:center;
+}
+
+.reviews-list{
+  padding-left:230px;
+  align-content: right;
+  padding-top: 20px;
+}
+
+#review-button{
+  float: right;
+  padding-right: 450px;
+}
+
+.login-title{
+  color: rgb(125, 170, 170);
+  padding-left: 70px;
 }

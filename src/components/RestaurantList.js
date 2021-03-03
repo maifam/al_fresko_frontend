@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Restaurant from './Restaurant';
 import Filter from './Filter';
 import Search from './Search';
-import { Grid } from 'semantic-ui-react';
+import { Card, Grid } from 'semantic-ui-react';
 
 function RestaurantList({restaurants, currentUser}) {
 
@@ -34,7 +34,8 @@ function RestaurantList({restaurants, currentUser}) {
             <br></br>
             <br></br>
             <br></br>
-            {restaurantsToDisplay}    
+            <Card.Group itemsPerRow={3}> {restaurantsToDisplay} </Card.Group>
+              
             
         </div>
     );

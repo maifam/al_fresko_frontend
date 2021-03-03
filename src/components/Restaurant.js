@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory} from 'react-router-dom';
-import { Card, Icon, Rating, Button} from 'semantic-ui-react';
+import { Card, Icon, Rating, Button, Divider} from 'semantic-ui-react';
 
 
 function Restaurant({restaurant, currentUser}) {
@@ -21,8 +21,10 @@ function Restaurant({restaurant, currentUser}) {
     return (
 
        <div className='restaurant-card'>
-            <Card>
-                <img src={od_img1} wrapped ui={false} onClick={handleShowDetails} />
+           <Divider horizontal></Divider>
+           
+            <Card id='card-info'>
+                <img id='card-img' src={od_img1} wrapped ui={false} onClick={handleShowDetails} />
                 <Card.Content>
                     <Card.Header>{name}</Card.Header>
                     <Card.Meta>
@@ -44,6 +46,7 @@ function Restaurant({restaurant, currentUser}) {
                     </a>
                 </Card.Content>
             </Card>
+            
         </div>
     
        

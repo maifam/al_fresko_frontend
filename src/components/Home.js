@@ -2,7 +2,7 @@
 function Home() {
     return (
         <div>
-            HOME PAGE
+            HOME PAGE / Map goes here 
         </div>
     )
 }

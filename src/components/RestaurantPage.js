@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import ReviewList from './ReviewList';
+import {Button} from 'semantic-ui-react';
 
 
 function RestaurantPage({user, bookmarks, setBookmarks, onAddBookmark}) {
@@ -83,31 +84,30 @@ function RestaurantPage({user, bookmarks, setBookmarks, onAddBookmark}) {
 
 
     return (
-        
+
         <div>
-            <h2> {name} </h2>
-            <img className="image" src={od_img2} alt={name} />
-            <img className="image" src={od_img1} alt={name} />
-            <img className="image" src={fd_img} alt={name} />
-            <div>
-                <p>{cuisine}</p>
-                <p>{money}</p>
-                <p>{address}</p>
-                <p>{hours}</p>
-                <p>{setup}</p>
-                <p> Phone: {phone} </p>
-                <p>COVID Precautions: {covid}</p>
-                <p><a href={website} target='_blank'>Visit Website</a></p>
-                <p><a href={menu} target='_blank'>View Menu</a></p>
-                {bookmarks.map(bm => bm.restaurant_id).includes(restaurant.id) ?  null : (<button onClick={handleAddNewBookmark}>Bookmark</button>)}
-                
-                
+            <div id='restaurant-page-info'>
+                <h2> {name} </h2>
+                <img className="info-img" src={od_img2} alt={name} />
+                <img className="info-img" src={od_img1} alt={name} />
+                <img className="info-img" src={fd_img} alt={name} />
+                <div>
+                    <p>{cuisine}</p>
+                    <p>{money}</p>
+                    <p>{setup}</p>
+                    <p>{address}</p>
+                    <p><strong>Hours: </strong>{hours}</p>
+                    <p><strong>Phone: </strong>{phone} </p>
+                    <p>COVID Precautions: {covid}</p>
+                    <p><a href={website} target='_blank'>Visit Website</a></p>
+                    <p><a href={menu} target='_blank'>View Menu</a></p>
+                    {bookmarks.map(bm => bm.restaurant_id).includes(restaurant.id) ?  null : (<Button icon='bookmark' basic color='teal' size='large' onClick={handleAddNewBookmark}></Button>)}
+                </div>
             </div>
-
-            <ReviewList restaurantId={id} reviews={filteredReviews} user={user} onAddReview={onAddReview} onDeleteReview={onDeleteReview}/>
-
-        </div>
-       
+            <div className='reviews-list'>
+                <ReviewList restaurantId={id} reviews={filteredReviews} user={user} onAddReview={onAddReview} onDeleteReview={onDeleteReview}/>
+            </div>
+       </div>
     );
 }
     

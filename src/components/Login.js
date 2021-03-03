@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useHistory, Link} from 'react-router-dom';
+import {Input} from 'semantic-ui-react'
 
 function Login({setCurrentUser}) {
 
@@ -37,14 +38,16 @@ function Login({setCurrentUser}) {
     }
     return (
 
-        <div className='ui raised segment centered' style={{borderColor: '#4D7A48'}} >
-            <div className='ui four column centered grid'>
-                <div className='column'>   
-                    <h2 className='login-title'>Welcome back!</h2>
-                    <div className='ui form'>
-                        <form className="login-form" onSubmit={handleSubmit}>
-                            <div className='field'>
-                                <input
+        <div className='ui raised segment' style={{borderColor: '#71ACB2'}} >
+             <div className='ui four column centered grid' >
+                 <div className='column'>   
+                     <h2 className='login-title'>Welcome back!</h2>
+                     <div className='ui form'>
+                         <form className="login-form" onSubmit={handleSubmit}>
+                             <div className='field'>
+                                 <Input
+                                    icon='user'
+                                    iconPosition='left'
                                     type="text"
                                     placeholder="username"
                                     value={username}
@@ -52,7 +55,9 @@ function Login({setCurrentUser}) {
                                 />
                             </div>
                             <div className='field'>
-                                <input
+                                <Input
+                                    icon='lock'
+                                    iconPosition='left'
                                     type="password"
                                     placeholder="password"
                                     id="password"
@@ -63,8 +68,10 @@ function Login({setCurrentUser}) {
                             {errors.map(error => {
                                 return <p key={error}>{errors}</p>
                             })}
-                            <input className="ui basic button" type="submit" value="Login" />
-
+                            
+                             <input className="ui basic button" type="submit" value="Login" />  
+                            
+    
                         </form>
                         <br></br>
                         <p>
@@ -75,7 +82,6 @@ function Login({setCurrentUser}) {
                 </div>
             </div>
         </div>
-
         
        
     );
@@ -112,3 +118,6 @@ export default Login;
         //     </p>
            
         // </div>
+
+
+    //    
