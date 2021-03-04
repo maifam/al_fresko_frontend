@@ -87,7 +87,7 @@ function RestaurantPage({user, bookmarks, setBookmarks, onAddBookmark}) {
 
         <div>
             <div id='restaurant-page-info'>
-                <h2> {name} </h2>
+                <h2 className='restaurant-name'> {name} </h2>
                 <img className="info-img" src={od_img2} alt={name} />
                 <img className="info-img" src={od_img1} alt={name} />
                 <img className="info-img" src={fd_img} alt={name} />

@@ -23,13 +23,13 @@ function Restaurant({restaurant, currentUser}) {
        <div className='restaurant-card'>
            <Divider horizontal></Divider>
            
-            <Card id='card-info'>
+            <Card id='card-info' style={{borderColor:'#71ACB2'}}>
                 <img id='card-img' src={od_img1} wrapped ui={false} onClick={handleShowDetails} />
                 <Card.Content>
-                    <Card.Header>{name}</Card.Header>
+                    <Card.Header style={{fontFamily:'Simonetta', color:'#71ACB2'}}>{name}</Card.Header>
                     <Card.Meta>
                         <span>
-                            <Rating disabled icon='heart' maxRating={money}  />
+                            <Rating disabled as='' icon='dollar sign' maxRating={money}  />
                         </span>
                     </Card.Meta>
                     <Card.Description>

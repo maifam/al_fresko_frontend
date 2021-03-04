@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Charm&family=Great+Vibes&family=Parisienne&family=Playball&family=Rochester&family=Simonetta&family=Zilla+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arapey&family=Merriweather:wght@300&family=Montserrat:wght@100&family=PT+Serif&family=Philosopher&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,11 +18,11 @@ code {
     monospace;
 }
 
-.logo{
+#logo-img {
   float: center;
-  padding-left: 20px;
-  padding-bottom: 10px;
-  size: 50px;
+  padding-left: 40px;
+  /* padding-bottom: 10px; */
+  width: 290px;
 }
 
 .header-bar {
@@ -27,28 +30,17 @@ code {
   padding-left:100px;
   padding-right:60px;
   text-align: left;
+  /* padding-bottom: -100px; */
 }
 
 .nav {
   float: right;
-  padding-right: 30px;
+  padding-right: 80px;
   padding-top: 80px;
 }
 
-.restuarant-card {
-  padding:10x;
-  
-}
 
-#card-info {
-  text-align: left;
-  align-content: center;
-  padding: 15px;
-  text-decoration-color: #799351 !important;
-  height: 420px;
-  width: 300px;
-  border-spacing: 2rem;
-}
+/* images styling */
 
 .info-img{
   width: 285px;
@@ -61,32 +53,100 @@ code {
 
 #card-img {
   border-radius: 4px;
-  width: 260px;
+  width: 270px;
   height: 220px;
   cursor: pointer;
   justify-content: space-between;
   cursor: pointer;
 }
 
+.profile-img {
+  border-radius: 10px;
+  width: 260px;
+  height: 290px;
+}
 
-.restaurant-list{
+.bookmark-img {
+  border-radius: 6px;
+  width: 140px;
+  height: 135px;
+}
+
+
+/* restaurants styling */
+#filter-bar {
+  padding-left: 150px;
+  padding-bottom: 5px;
+}
+#search-bar{
+  padding-right: 150px;
+  padding-top: -150px;
+}
+
+#filter{
+  text-align: left;
+  padding: 9px;
+}
+/* .restaurant-list{
   display: grid;
   grid-template: auto 1fr auto / auto 1fr auto;
   padding-top: -50px;
-  padding-left: 80px;
-  padding-right: 80px;
-  
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  box-shadow: rgb(125, 170, 170) !important;
+  border-radius: 5px !important;
+} */
+
+#restaurant-list{
+  padding-top: 0em;
+  padding-left: 150px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  grid-template: auto 1fr auto / auto 1fr auto;
+  box-shadow: rgb(125, 170, 170) !important;
+  border-radius: 10px !important;
 }
+
+.restaurant-card {
+  padding:16px;
+  box-shadow: rgb(125, 170, 170) !important;
+  border-radius: 5px !important;
+}
+
+#card-info {
+  text-align: left;
+  align-content: center;
+  padding: 15px;
+  color: #799351 !important;
+  height: 420px;
+  width: 300px;
+  border-spacing: 2rem;
+  font-family:'Simonetta', cursive !important;
+  font-size: 16px;
+}
+
 
 #restaurant-page-info{
   padding-left: 80px;
   text-align:center;
+  font-family: '';
+  font-size: 18px;
 }
+.restaurant-name{
+  font-family: 'Charm';
+  font-size: 30px;
+  letter-spacing: 3px;
+  color:rgb(39, 158, 118);
+}
+
+/* reviews styling */
 
 .reviews-list{
   padding-left:230px;
   align-content: right;
   padding-top: 20px;
+  padding-bottom:50px;
 }
 
 #review-button{
@@ -94,7 +154,32 @@ code {
   padding-right: 450px;
 }
 
+/* login/register */
+
 .login-title{
   color: rgb(125, 170, 170);
   padding-left: 70px;
+  font-family: 'Charm', cursive;
+  letter-spacing: 3px;;
+}
+
+/* profile */
+.profile-page {
+  padding-left: 150px;
+  padding-bottom:80px;
+  color:rgb(30, 90, 90);
+  font-family:'Zilla Slab', serif;
+  font-size:18px;
+}
+
+#bookmark-list-header{
+  color:rgb(125, 170, 170);
+  font-family: 'Simonetta';
+  font-size:18px;
+}
+
+#welcome-profile{
+  color:rgb(39, 158, 118);
+  font-family: 'Charm', cursive;
+  letter-spacing: 2px;;
 }

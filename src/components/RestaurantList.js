@@ -27,15 +27,19 @@ function RestaurantList({restaurants, currentUser}) {
         return <Restaurant key={restaurant.id} restaurant={restaurant} currentUser={currentUser}/>
     })
     return (
-        <div className='restaurant-list'>
-            
-            <Filter setSortBy={setSortBy} />
-            <Search setSearch={setSearch}/>
+        <div>
+            <div id='filter-bar'>
+                <Filter setSortBy={setSortBy} />
+            </div>
+            <div id='search-bar'>
+                <Search setSearch={setSearch}/>
+            </div>
             <br></br>
             <br></br>
             <br></br>
-            <Card.Group itemsPerRow={3}> {restaurantsToDisplay} </Card.Group>
-              
+            <div id='restaurant-list'>
+                <Card.Group itemsPerRow={3}> {restaurantsToDisplay} </Card.Group> 
+            </div>
             
         </div>
     );

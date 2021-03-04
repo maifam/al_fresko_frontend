@@ -4,17 +4,21 @@ function Filter({setSortBy}) {
         setSortBy(e.target.value)
     }
 
+   
+
     return (
         <>
-            <div className="Filter">
+             <div id="filter">
                 <select id="filter" className="ui selection dropdown" name="filter" onChange={handleChangeFilter} >
                     <option value="All">Sort by Price - All</option>
                     <option value="high to low">High to Low</option>
                     <option value="low to high">Low to High</option>
                 </select>
-            </div>
+            </div> 
         </>
     );
 }
     
 export default Filter;
+
+

@@ -7,7 +7,7 @@ function Header({currentUser, setCurrentUser}) {
         <div className='header-bar'>
             {/* <div className='logo'> */}
                 {/* <h1> al 'freskō</h1> */}
-                <img id='logo' src={alfresko_logo} alt=' logo'/>
+                <img id='logo-img' src={alfresko_logo} alt='logo'/>
             {/* </div> */}
             <div className='nav'>
                 <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />

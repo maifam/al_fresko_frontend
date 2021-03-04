@@ -1,4 +1,5 @@
 import Bookmark from './Bookmark';
+import {Label} from 'semantic-ui-react';
 
 function BookmarkList({bookmarks, onRemoveBookmark, currentUser}) {
 
@@ -8,8 +9,11 @@ function BookmarkList({bookmarks, onRemoveBookmark, currentUser}) {
 
     return (
         
-        <div>
-            <h3> BookmarkList </h3>
+        <div className='bookmark-list'>
+            <Label color='teal' ribbon size='large'>
+                your bookmarks
+            </Label>
+            <br></br>
             {bookmarksToDisplay}
         </div>
        
