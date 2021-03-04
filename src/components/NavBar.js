@@ -17,9 +17,14 @@ function NavBar({currentUser, setCurrentUser}) {
         <>
             
             <nav>
+                <Button as={Link} to='/' circular icon basic color='teal'> 
+                    <Icon name='map'></Icon> 
+                </Button>
+
                 <Button as={Link} to='/restaurants' circular icon basic color='teal'> 
                     <Icon name='utensils'></Icon> Browse Restaurants
                 </Button>
+
                 {currentUser ? 
                  (<>
                     <Button as={Link} to='/profile' circular icon basic color='teal'> 

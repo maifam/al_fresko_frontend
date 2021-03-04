@@ -29,7 +29,7 @@ function Profile({user, bookmarks, onRemoveBookmark}) {
 
                 <Grid.Column>
                     <p>
-                    <BookmarkList bookmarks={myBookmarks} onRemoveBookmark={onRemoveBookmark} currentUser={user}/>
+                        <BookmarkList bookmarks={myBookmarks} onRemoveBookmark={onRemoveBookmark} currentUser={user}/>
                     </p>
                 </Grid.Column>
             </Grid>

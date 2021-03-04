@@ -89,7 +89,7 @@ function Review({review, onDeleteReview,currentUser}) {
                                 <Comment.Text>{currentContent} </Comment.Text>
                                 
                                 {currentUser.id === review.user.id ? (<Button size='mini' icon='edit' basic color='white' onClick={handleEditClick}></Button>) : null }
-                                {currentUser.id === review.user.id ? (<Button size='mini' icon='trash' basic color='white' onClick={handleDeleteClick}></Button>) : null}
+                                {currentUser.id === review.user.id ? (<Button size='mini' icon='trash alternate' basic color='white' onClick={handleDeleteClick}></Button>) : null}
                                 
                             </Comment.Content>
 

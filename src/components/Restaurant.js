@@ -16,7 +16,8 @@ function Restaurant({restaurant, currentUser}) {
             history.push('/login')
         }
     }
-
+  
+    const moneyIcons = [...Array(money)].map((e, i) => <span key={i}>$</span>)
 
     return (
 
@@ -29,7 +30,7 @@ function Restaurant({restaurant, currentUser}) {
                     <Card.Header style={{fontFamily:'Simonetta', color:'#71ACB2'}}>{name}</Card.Header>
                     <Card.Meta>
                         <span>
-                            <Rating disabled as='' icon='dollar sign' maxRating={money}  />
+                            {moneyIcons}
                         </span>
                     </Card.Meta>
                     <Card.Description>

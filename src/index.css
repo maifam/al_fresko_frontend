@@ -48,6 +48,7 @@ code {
   justify-content:space-around;
   float:center;
   overflow: hidden;
+  border-radius: 10px;
   padding: 4px;
 }
 
@@ -70,6 +71,7 @@ code {
   border-radius: 6px;
   width: 140px;
   height: 135px;
+  cursor: pointer;
 }
 
 
@@ -80,7 +82,7 @@ code {
 }
 #search-bar{
   padding-right: 150px;
-  padding-top: -150px;
+ 
 }
 
 #filter{
@@ -138,6 +140,10 @@ code {
   font-size: 30px;
   letter-spacing: 3px;
   color:rgb(39, 158, 118);
+}
+.setup-info{
+  font-family: '';
+  color: teal;
 }
 
 /* reviews styling */

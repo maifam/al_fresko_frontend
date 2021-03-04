@@ -46,7 +46,7 @@ function NewReviewForm({ currentUser, restaurantId, onAddReview, setReviewClick}
                 <Rating size='huge' maxRating={5} clearable value={rating} onRate={handleRateChange}/>
             </h4>
           <Form.TextArea size='small' value={content} onChange={e=> setContent(e.target.value)}  />
-          <Button basic color='black' type='submit' content='Submit Review' labelPosition='left' icon='edit' />
+          <Button basic color='white' type='submit' content='Submit Review' labelPosition='left' icon='edit' />
         </Form>
        
     );
