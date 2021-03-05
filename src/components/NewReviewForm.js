@@ -13,7 +13,7 @@ function NewReviewForm({ currentUser, restaurantId, onAddReview, setReviewClick}
         const newReview = {
             user_id: currentUser.id,
             restaurant_id: restaurantId,
-            likes: 1, 
+            // likes: 1, 
             rating: parseInt(rating),
             content
         }
@@ -41,6 +41,7 @@ function NewReviewForm({ currentUser, restaurantId, onAddReview, setReviewClick}
     return (
         
         <Form reply onSubmit={handleSubmitReview}>
+            <p></p>
             <h4> Rate this restaurant: 
                 <br></br>
                 <Rating size='huge' maxRating={5} clearable value={rating} onRate={handleRateChange}/>
@@ -53,7 +54,6 @@ function NewReviewForm({ currentUser, restaurantId, onAddReview, setReviewClick}
 }
     
 export default NewReviewForm;
-
 
 
 

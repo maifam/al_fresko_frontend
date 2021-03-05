@@ -88,22 +88,26 @@ function RestaurantPage({user, bookmarks, setBookmarks, onAddBookmark}) {
     return (
 
         <div>
-            <div id='restaurant-page-info'>
+            <div className='restaurant-page-info'>
                 <h3 className='restaurant-name'> {name} </h3>
                 <img className="info-img" src={od_img2} alt={name} />
                 <img className="info-img" src={od_img1} alt={name} />
                 <img className="info-img" src={fd_img} alt={name} />
-                <div>
-                    <p className='setup-info'><strong>Outdoor:</strong>{setup}</p>
-                    <p><Icon name='utensils'/>{cuisine}</p>
-                    <p><Icon name='map marker alternate'/>{address}</p>
-                    <p><strong>{moneyIcons}</strong></p>
-                    <p><Icon name='clock'/>{hours}</p>
-                    <p><Icon name='phone'/>{phone} </p>
-                    <p><Icon name='attention'/>{covid} </p>
-                    <p><a href={website} target='_blank'>Visit Website</a></p>
-                    <p><a href={menu} target='_blank'>View Menu</a></p>
-                    {bookmarks.map(bm => bm.restaurant_id).includes(restaurant.id) ?  null : (<Button icon='bookmark' basic color='teal' size='large' onClick={handleAddNewBookmark}></Button>)}
+                <div className='info-box'> 
+                    <div className='ui raised segment' style={{ width: 1000}}>
+                        <p className='setup-info'>
+                            <Icon name='sun'/>{setup}
+                        </p>
+                        <p><Icon name='utensils'/>{cuisine}</p>
+                        <p><Icon name='map marker alternate'/>{address}</p>
+                        <p><strong>{moneyIcons}</strong></p>
+                        <p><Icon name='clock'/>{hours}</p>
+                        <p><Icon name='phone'/>{phone} </p>
+                        <p><Icon name='attention'/>{covid} </p>
+                        <p><a href={website} target='_blank'>Visit Website</a></p>
+                        <p><a href={menu} target='_blank'>View Menu</a></p>
+                        {bookmarks.map(bm => bm.restaurant_id).includes(restaurant.id) ?  null : (<Button icon='bookmark' basic color='teal' size='large' onClick={handleAddNewBookmark}></Button>)}
+                    </div>
                 </div>
             </div>
             <div className='reviews-list'>

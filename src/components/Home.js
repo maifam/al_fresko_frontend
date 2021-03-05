@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 function Home({restaurants, position}) {
@@ -10,19 +10,17 @@ function Home({restaurants, position}) {
     // console.log(restaurants[0].position)
     // console.log(restaurantMarkers)
     // const position = [40.7584, -73.98329]
-
    
-    const history = useHistory();
+    // const history = useHistory();
 
 
     return (
-        <div>
+        <div className='map-container'>
             <MapContainer 
-                id='map-container'
                 center={position} 
                 zoom={13} 
                 scrollWheelZoom={true} 
-                style={{height:600, width: 900}}>
+                style={{height:500, width: 900}}>
                 <TileLayer
                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -31,7 +29,8 @@ function Home({restaurants, position}) {
                     <Marker key={restaurant.id} position={restaurant.position} >
                         <Popup>
                             <img className='rest-map-img'  src={restaurant.fd_img}/>
-                            <p><strong>{restaurant.name}</strong></p>
+                            <p><Link to={`/restaurants/${restaurant.id}`}>{restaurant.name}</Link></p>
+                            {/* <p><strong>{restaurant.name}</strong></p> */}
                             <p>{restaurant.cuisine}</p>
                         </Popup>
                     </Marker>

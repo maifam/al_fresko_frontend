@@ -23,7 +23,7 @@ function ReviewList({restaurantId, user, reviews, onAddReview, onDeleteReview}) 
             <Grid >
                 <Grid.Column>
                 
-                    <Label as='a' color='teal' ribbon>
+                    <Label as='a' color='teal' ribbon id='reviews-ribbon'>
                         Reviews
                     </Label>
                         <span>{reviewsToDisplay}</span>

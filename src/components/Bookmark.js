@@ -51,7 +51,7 @@ export default Bookmark;
 
 
 
-{/* <div>
+/* <div>
 <br></br>
 <img className="bookmark-img" onClick={handlePageClick} src={bookmark.restaurant.fd_img} alt={bookmark.restaurant.fd_img} />
 <p>{bookmark.restaurant.name}</p>
@@ -59,7 +59,7 @@ export default Bookmark;
 <Button  onClick={handleRemoveBookmark} size='tiny' icon basic color='teal'> 
     <Icon name='bookmark'></Icon> Remove
 </Button>
-{/* <button onClick={handleRemoveBookmark}>Remove Bookmark</button> */}
+{/* <button onClick={handleRemoveBookmark}>Remove Bookmark</button> */
 
-{/* <br></br>
-</div> */} 
+/* <br></br>
+</div> */

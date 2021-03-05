@@ -1,4 +1,4 @@
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 import '../App.css';
 import '../index.css';
 import React, {useState, useEffect} from 'react'
@@ -17,7 +17,7 @@ function App() {
   const [restaurants, setRestaurants] = useState([])
   const [currentUser, setCurrentUser] = useState(true)
   const [bookmarks, setBookmarks] = useState([])
-  const [position, setPosition] = useState([40.7008739, -73.9875141])
+  const [position, setPosition] = useState([40.745350, -73.986397])
   
 
   // real auth
@@ -68,8 +68,8 @@ function App() {
   
 
   return (
-    <>
-      <div>
+   
+      <div className='App'>
         <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
 
         <Switch>
@@ -108,7 +108,7 @@ function App() {
 
         </Switch>
       </div>
-    </>
+    
 
     
   );
@@ -118,7 +118,7 @@ export default App;
 
 
 
-{/* <div className="App">
+/* <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -133,4 +133,4 @@ export default App;
           Learn React
         </a>
       </header>
-    </div> */}
+    </div> */
