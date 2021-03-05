@@ -39,8 +39,16 @@ code {
   padding-top: 80px;
 }
 
+#map-container {
+  justify-content: center;
+}
 
 /* images styling */
+
+.rest-map-img {
+  width:160px;
+  height: 150px;
+}
 
 .info-img{
   width: 285px;

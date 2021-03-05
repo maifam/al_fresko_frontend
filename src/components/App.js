@@ -17,6 +17,7 @@ function App() {
   const [restaurants, setRestaurants] = useState([])
   const [currentUser, setCurrentUser] = useState(true)
   const [bookmarks, setBookmarks] = useState([])
+  const [position, setPosition] = useState([40.7008739, -73.9875141])
   
 
   // real auth
@@ -74,7 +75,7 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Home />
+            <Home restaurants={restaurants} position={position}/>
           </Route>
 
           <Route exact path="/login">
