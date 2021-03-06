@@ -156,7 +156,7 @@ code {
   padding-top: 30px;
   padding-left: 250px;
   float: center;
-  size: 20px !important;
+  text-decoration: 20px !important;
 } 
 
 .restaurant-name{
@@ -190,6 +190,7 @@ code {
   float: left;
   padding-bottom: 10px;
 }
+
 
 /* login/register */
 
