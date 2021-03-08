@@ -29,7 +29,7 @@ function Home({restaurants, position}) {
                     <Marker key={restaurant.id} position={restaurant.position} >
                         <Popup>
                             <img className='rest-map-img'  src={restaurant.fd_img}/>
-                            <p><Link to={`/restaurants/${restaurant.id}`}>{restaurant.name}</Link></p>
+                            <p><Link to={`/restaurants/${restaurant.id}`}><strong>{restaurant.name}</strong></Link></p>
                             {/* <p><strong>{restaurant.name}</strong></p> */}
                             <p>{restaurant.cuisine}</p>
                         </Popup>
