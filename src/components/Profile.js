@@ -22,7 +22,7 @@ function Profile({user, bookmarks, onRemoveBookmark}) {
                         <h2 id='welcome-profile'> Welcome, {user.name}</h2>
                         <img className="profile-img" src={user.image} alt={user.username} />
                         <p><strong>username: </strong>{user.username}</p> 
-                        <p><strong>member since: </strong>November 16, 2020</p> 
+                        <p><strong>member since: </strong>March 7, 2021</p> 
                     </div>
                 </Grid.Column>
 
