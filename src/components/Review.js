@@ -27,7 +27,7 @@ function Review({review, onDeleteReview,currentUser}) {
         e.preventDefault();
 
         const editReview = {
-            rating: parseInt(editRating),
+            rating: parseInt(currentRating),
             content: editContent
         }
 
@@ -60,11 +60,7 @@ function Review({review, onDeleteReview,currentUser}) {
                     <form onSubmit={handleSubmitReview}>
                         <label>Edit your rating:</label>
                             <span className='star-rating'>
-                                1<input type='radio' label='1' checked={editRating=== 1} value='1' onChange={(e) => setEditRating(1)}/>
-                                2<input type='radio' label='2' checked={editRating=== 2} value='2' onChange={(e) => setEditRating(2)}/>
-                                3<input type='radio' label='3' checked={editRating=== 3} value='3' onChange={(e) => setEditRating(3)}/>
-                                4<input type='radio' label='4' checked={editRating=== 4} value='4' onChange={(e) => setEditRating(4)}/>
-                                5<input type='radio' label='5' checked={editRating=== 5} value='5' onChange={(e) => setEditRating(5)}/>
+                                <Rating defaultRating={currentRating} maxRating={5} onRate={(e)=>setCurrentRating(e.target.ariaPosInSet)}/>
                             </span>
                         <br></br>
                         <br></br>
