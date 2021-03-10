@@ -1,7 +1,9 @@
+import React, {useState} from 'react';
 import BookmarkList from './BookmarkList';
-import { Divider, Grid, Segment } from 'semantic-ui-react';
+import ProfileUpdate from './ProfileUpdate';
+import { Modal, Button, Grid, Segment, FormInput } from 'semantic-ui-react';
 
-function Profile({user, bookmarks, onRemoveBookmark}) {
+function Profile({user, bookmarks, onRemoveBookmark, setCurrentUser}) {
 
     const myBookmarks = bookmarks.filter(bookmark => {
         if (bookmark.user_id == user.id) {
@@ -10,8 +12,8 @@ function Profile({user, bookmarks, onRemoveBookmark}) {
             return null
         }
     })
-  
 
+    const [open, setOpen] = useState(false)
     console.log(user)
 
     return (
@@ -20,9 +22,20 @@ function Profile({user, bookmarks, onRemoveBookmark}) {
                 <Grid.Column>
                     <div className='profile-page'>
                         <h2 id='welcome-profile'> Welcome, {user.name}</h2>
-                        <img className="profile-img" src={user.image} alt={user.username} />
+                        <img className="profile-img" src={user.image_url} alt={user.username} />
                         <p><strong>username: </strong>{user.username}</p> 
                         <p><strong>member since: </strong>March 7, 2021</p> 
+                        <p>
+                            <Modal basic 
+                                onClose={() => setOpen(false)}
+                                onOpen={() => setOpen(true)}
+                                open={open}
+                                size='small'
+                                trigger={<Button basic color='teal'>Edit Profile</Button>}>
+                                    <ProfileUpdate user={user} setCurrentUser={setCurrentUser} setOpen={setOpen}/>
+                            </Modal>
+                        </p>
+                       
                     </div>
                 </Grid.Column>
 

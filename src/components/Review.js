@@ -75,7 +75,7 @@ function Review({review, onDeleteReview,currentUser}) {
                     <Comment.Group>
                         <Divider horizontal></Divider>
                         <Comment>
-                            <Comment.Avatar className="image" src={user.image} alt={user.name} />
+                            <Comment.Avatar className="image" src={user.image_url} alt={user.name} />
                             <Comment.Content>
 
                                 <Comment.Author>{user.username}</Comment.Author>
