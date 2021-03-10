@@ -7,6 +7,7 @@ import Header from './Header'
 import RestaurantList from './RestaurantList'
 import Profile from './Profile'
 import Login from './Login'
+import Footer from './Footer'
 import Register from './Register'
 import RestaurantPage from './RestaurantPage'
 import Home from './Home'
@@ -107,6 +108,7 @@ function App() {
           </Route>
 
         </Switch>
+        <Footer/>
       </div>
     
 

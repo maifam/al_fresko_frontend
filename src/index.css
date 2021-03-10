@@ -10,6 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding-left: 70px;
   padding-right:70px;
+  font-size: 30px
 }
 
 
@@ -156,7 +157,7 @@ code {
   padding-top: 30px;
   padding-left: 250px;
   float: center;
-  text-decoration: 20px !important;
+  /* font-size: 60px !important; */
 } 
 
 .restaurant-name{
@@ -226,4 +227,18 @@ code {
 .bookmark-list{
   padding-top: 15px;
   padding-left: 20px;
+}
+
+#footer {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 18px;
+  text-align: center;
+  padding:15px;
+  color: #336b81;
+  /* position: absolute; */
+  bottom: 0;
+  padding-bottom: 2px;
+  width: 100%;
+  /* text-decoration: #ffcfdf wavy underline; */
+  /* text-decoration: underline dotted #ffcfdf; */
 }
