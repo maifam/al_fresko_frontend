@@ -20,7 +20,7 @@ function ProfileUpdate({ user, setCurrentUser, setOpen}) {
 
         const token = localStorage.getItem('token')
         if (token) { 
-            fetch(`http://localhost:3000/users/${user.id}`, {
+            fetch(`https://enigmatic-island-27273.herokuapp.com/users/${user.id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`, 
                 }, 

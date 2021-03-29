@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      fetch("http://localhost:3000/profile", {
+      fetch("https://enigmatic-island-27273.herokuapp.com/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -38,7 +38,7 @@ function App() {
 
   //fetch all restaurants
   useEffect (() => {
-    fetch('http://localhost:3000/restaurants')
+    fetch('https://enigmatic-island-27273.herokuapp.com/restaurants')
     .then(res => res.json())
     .then(data => setRestaurants(data))
   }, [])
@@ -48,7 +48,7 @@ function App() {
   //fetch all bookmarks
   useEffect(() => {
     if (currentUser) {
-    fetch('http://localhost:3000/bookmarks')
+    fetch('https://enigmatic-island-27273.herokuapp.com/bookmarks')
     .then(res => res.json())
     .then(data => {
       // let currentUserBookmark = data.filter(dt => dt.user_id === currentUser.id)

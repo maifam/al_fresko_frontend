@@ -12,7 +12,7 @@ function Bookmark({bookmark, onRemoveBookmark, currentUser}) {
 
     function handleRemoveBookmark(){
         
-        fetch(`http://localhost:3000/bookmarks/${id}`, {
+        fetch(`https://enigmatic-island-27273.herokuapp.com/bookmarks/${id}`, {
             method: 'DELETE',
         })
         onRemoveBookmark(id)
