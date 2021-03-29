@@ -1,4 +1,3 @@
-// import logo from '../logo.svg';
 import '../App.css';
 import '../index.css';
 import React, {useState, useEffect} from 'react'
@@ -16,7 +15,7 @@ function App() {
 
 
   const [restaurants, setRestaurants] = useState([])
-  const [currentUser, setCurrentUser] = useState(true)
+  const [currentUser, setCurrentUser] = useState(false)
   const [bookmarks, setBookmarks] = useState([])
   const [position, setPosition] = useState([40.745350, -73.986397])
   
@@ -44,7 +43,7 @@ function App() {
     .then(data => setRestaurants(data))
   }, [])
 
-  // console.log(currentUser)
+  
 
   //fetch all bookmarks
   useEffect(() => {
@@ -76,7 +75,7 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Home restaurants={restaurants} position={position}/>
+            <Home restaurants={restaurants} position={position} currentUser={currentUser}/>
           </Route>
 
           <Route exact path="/login">
@@ -93,14 +92,19 @@ function App() {
 
           <Route exact path="/profile">
             {currentUser ? <Profile user={currentUser} 
-                            setCurrentUser={setCurrentUser} 
-                            bookmarks={bookmarks} 
-                            onRemoveBookmark={onRemoveBookmark}/> 
+                                    setCurrentUser={setCurrentUser} 
+                                    bookmarks={bookmarks} 
+                                    onRemoveBookmark={onRemoveBookmark}
+                            /> 
             : <h1> Must be logged in </h1> }
           </Route>
 
           <Route exact path="/restaurants/:id">
-            <RestaurantPage user={currentUser} bookmarks={bookmarks} setBookmarks={setBookmarks} onAddBookmark={onAddBookmark}/>
+            <RestaurantPage user={currentUser} 
+                            bookmarks={bookmarks} 
+                            setBookmarks={setBookmarks} 
+                            onAddBookmark={onAddBookmark}
+            />
           </Route>
 
           <Route path="*">
@@ -109,30 +113,8 @@ function App() {
 
         </Switch>
         <Footer/>
-      </div>
-    
-
-    
+      </div>   
   );
 }
 
 export default App;
-
-
-
-/* <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div> */

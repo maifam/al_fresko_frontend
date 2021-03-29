@@ -4,7 +4,6 @@ function Filter({setSortBy}) {
         setSortBy(e.target.value)
     }
 
-   
 
     return (
         <>

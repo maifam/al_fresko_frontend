@@ -13,10 +13,3 @@ function Search({setSearch}) {
     
 export default Search;
 
-// <form>
-//     <input
-//     type="text"
-//     placeholder="Search by cuisine..."
-//     onChange={(e)=> setSearch(e.target.value)}
-//     />
-// </form>

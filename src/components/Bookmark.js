@@ -23,14 +23,20 @@ function Bookmark({bookmark, onRemoveBookmark, currentUser}) {
     return (
         <List>
             <List.Item>
-            <Image className="bookmark-img" onClick={handlePageClick} src={bookmark.restaurant.fd_img} alt={bookmark.restaurant.fd_img} />
+                <Image className="bookmark-img" 
+                        onClick={handlePageClick} 
+                        src={bookmark.restaurant.fd_img} 
+                        alt={bookmark.restaurant.fd_img} 
+                    />
             <List.Content>
                 <List.Header id='bookmark-list-header' >{bookmark.restaurant.name}</List.Header>
                 <List.Description>
                     <p>
                         {bookmark.restaurant.cuisine}
                     </p>
+
                     <br></br>
+
                     <p>
                         <Button  onClick={handleRemoveBookmark} size='tiny' icon basic color='teal'> 
                             <Icon name='bookmark'></Icon> Remove
@@ -40,26 +46,7 @@ function Bookmark({bookmark, onRemoveBookmark, currentUser}) {
             </List.Content>
             </List.Item>
         </List>
-       
-       
     );
 }
     
 export default Bookmark;
-
-
-
-
-
-/* <div>
-<br></br>
-<img className="bookmark-img" onClick={handlePageClick} src={bookmark.restaurant.fd_img} alt={bookmark.restaurant.fd_img} />
-<p>{bookmark.restaurant.name}</p>
-
-<Button  onClick={handleRemoveBookmark} size='tiny' icon basic color='teal'> 
-    <Icon name='bookmark'></Icon> Remove
-</Button>
-{/* <button onClick={handleRemoveBookmark}>Remove Bookmark</button> */
-
-/* <br></br>
-</div> */

@@ -82,42 +82,8 @@ function Login({setCurrentUser}) {
                 </div>
             </div>
         </div>
-        
        
     );
 }
     
 export default Login;
-
-        // <div>
-        //     <h2> Login </h2>
-        //     <form onSubmit={handleSubmit}>
-        //         <label>
-        //             username:
-        //             <input type="text" 
-        //                 name="username" 
-        //                 value={username} 
-        //                 onChange={(e) => setUsername(e.target.value)}
-        //             />
-        //         </label>
-        //         <label>
-        //             password:
-        //             <input type="password" 
-        //                 name="password" 
-        //                 value={password}
-        //                 onChange={(e) => setPassword(e.target.value)}
-        //             />
-        //         </label>
-        //         {errors.map(error => {
-        //             return <p key={error}>{errors}</p>
-        //         })}
-        //         <input type="submit" value="Submit" />
-        //     </form>
-        //     <p>
-        //         Don't have an account? <Link to='/register'>Sign Up</Link>
-        //     </p>
-           
-        // </div>
-
-
-    //    

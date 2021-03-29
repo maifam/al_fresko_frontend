@@ -2,16 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
-function Home({restaurants, position}) {
-
-    // const restaurantMarkers = restaurants.map(restaurant => {
-    //     return restaurant.position
-    // })
-    // console.log(restaurants[0].position)
-    // console.log(restaurantMarkers)
-    // const position = [40.7584, -73.98329]
-   
-    // const history = useHistory();
+function Home({restaurants, position, currentUser}) {
 
 
     return (
@@ -28,9 +19,14 @@ function Home({restaurants, position}) {
                 {restaurants.map((restaurant) => (
                     <Marker key={restaurant.id} position={restaurant.position} >
                         <Popup>
-                            <img className='rest-map-img'  src={restaurant.fd_img}/>
-                            <p><Link to={`/restaurants/${restaurant.id}`}><strong>{restaurant.name}</strong></Link></p>
-                            {/* <p><strong>{restaurant.name}</strong></p> */}
+                            <img className='rest-map-img'  src={restaurant.fd_img} />
+            
+                            <p> 
+                                {currentUser ? 
+                                    <Link to={`/restaurants/${restaurant.id}`} ><strong>{restaurant.name}</strong></Link> 
+                                :   <Link to={`/login`}><strong>{restaurant.name}</strong></Link>} 
+                            </p>
+                            <p><em>{restaurant.address}</em></p>
                             <p>{restaurant.cuisine}</p>
                         </Popup>
                     </Marker>

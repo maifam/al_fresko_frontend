@@ -74,14 +74,6 @@ function RestaurantPage({user, bookmarks, setBookmarks, onAddBookmark}) {
 
     const { name, cuisine, address, website, hours, setup, covid, menu, phone, money, od_img1, od_img2, fd_img } = restaurant;
     
-
-    // const alreadyBookmarked = (user.bookmarks.map(bookmark => {
-    //     return bookmark.restaurant_id
-    // }))
-
-    // console.log(alreadyBookmarked.includes(restaurant.id))
-    // console.log(id)
-
     const moneyIcons = [...Array(money)].map((e, i) => <span key={i}>$</span>)
 
 

@@ -54,18 +54,3 @@ function Profile({user, bookmarks, onRemoveBookmark, setCurrentUser}) {
     
 export default Profile;
 
-// bookmarks={user.bookmarks}
-
-
-
-
-
-
-{/* <div className='profile-page'>
-            <h2> Welcome to your page, {user.name}</h2>
-            <img className="profile-img" src={user.image} alt={user.username} />
-            <p><strong>username: </strong>{user.username}</p> 
-
-            <BookmarkList bookmarks={myBookmarks} onRemoveBookmark={onRemoveBookmark} currentUser={user}/>
-           
-        </div> */}

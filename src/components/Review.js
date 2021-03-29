@@ -46,11 +46,6 @@ function Review({review, onDeleteReview,currentUser}) {
         setEditReview(false)
     }
     
-    // function handleRateChange(e, {currentRating}) {
-    //     e.preventDefault();
-    //     setEditRating(currentRating);
-    // }
-   
     return (
         <>
 
@@ -103,36 +98,3 @@ export default Review;
 
 
 
-{/* <>
-
-{editReview ? ( 
-    <>
-        <img className="image" src={user.image} alt={user.name} />
-        <form onSubmit={handleSubmitReview}>
-            <label>Rate this restaurant:
-                1<input type='radio' label='1' checked={editRating=== 1} value='1' onChange={(e) => setEditRating(1)}/>
-                2<input type='radio' label='2' checked={editRating=== 2} value='2' onChange={(e) => setEditRating(2)}/>
-                3<input type='radio' label='3' checked={editRating=== 3} value='3' onChange={(e) => setEditRating(3)}/>
-                4<input type='radio' label='4' checked={editRating=== 4} value='4' onChange={(e) => setEditRating(4)}/>
-                5<input type='radio' label='5' checked={editRating=== 5} value='5' onChange={(e) => setEditRating(5)}/>
-            </label>
-            <br></br>
-            <br></br>
-            <label>
-                Content: 
-                <textarea type='textarea' name='content' placeholder={content} value={editContent} onChange={(e)=>setEditContent(e.target.value)}/>
-            </label>
-            <input type='submit' value='submit'/>
-        </form>
-    </>) :  (
-    <div>
-        <img className="image" src={user.image} alt={user.name} />
-        <p>{user.username}</p>
-        <p>{currentContent}</p>
-        <p>{currentRating}</p>
-        
-        {currentUser.id === review.user.id ? (<button onClick={handleDeleteClick}>Delete</button>) : null}
-        
-        {currentUser.id === review.user.id ? (<button onClick={handleEditClick}>  Edit</button>) : null }
-    </div>)}
-</>  */}

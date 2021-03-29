@@ -55,18 +55,3 @@ function Restaurant({restaurant, currentUser}) {
 }
     
     export default Restaurant;
-
-
-
-    // <div className='card'>
-    //     <div className='card-info'> 
-    //         <img className="image" src={od_img1} alt={name} />
-    //         <br></br>
-    //         <h2> {name}</h2>
-    //         <p>{cuisine}</p>
-    //         <p>{money}</p>
-    //         <p>{address}</p>
-    //         <br></br>
-    //         <button onClick={handleShowDetails}>Show Details</button>
-    //     </div>
-    // </div>
