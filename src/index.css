@@ -10,7 +10,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding-left: 70px;
   padding-right:70px;
-  font-size: 30px
+  /* use margin */
+  font-size: 14px
 }
 
 
@@ -104,17 +105,6 @@ code {
   text-align: left;
   padding: 9px;
 }
-
-/* .restaurant-list{
-  display: grid;
-  grid-template: auto 1fr auto / auto 1fr auto;
-  padding-top: -50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 40px;
-  box-shadow: rgb(125, 170, 170) !important;
-  border-radius: 5px !important;
-} */
 
 #restaurant-list{
   padding-top: 0em;
@@ -236,10 +226,8 @@ code {
   text-align: center;
   padding:15px;
   color: #336b81;
-  /* position: absolute; */
   bottom: 0;
   padding-bottom: 2px;
   width: 100%;
-  /* text-decoration: #ffcfdf wavy underline; */
-  /* text-decoration: underline dotted #ffcfdf; */
+
 }

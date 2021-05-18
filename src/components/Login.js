@@ -17,7 +17,7 @@ function Login({setCurrentUser}) {
             password
         }
 
-        fetch('https://enigmatic-island-27273.herokuapp.com/login', {
+        fetch('http://localhost:3000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

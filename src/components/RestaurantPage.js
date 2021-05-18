@@ -16,7 +16,7 @@ function RestaurantPage({user, bookmarks, setBookmarks, onAddBookmark}) {
 
 //fetch for one restaurant 
     useEffect(() => {
-        fetch(`https://enigmatic-island-27273.herokuapp.com/restaurants/${id}`)
+        fetch(`http://localhost:3000/restaurants/${id}`)
           .then((r) => r.json())
           .then((restaurant) => {
             setRestaurant(restaurant);

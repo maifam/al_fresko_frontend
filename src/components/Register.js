@@ -30,7 +30,7 @@ function Register({setCurrentUser}) {
         console.log(image)
         console.log(formData)
         
-        fetch('https://enigmatic-island-27273.herokuapp.com/signup', {
+        fetch('http://localhost:3000/signup', {
             method: 'POST', 
             body: formData,
             // headers: {

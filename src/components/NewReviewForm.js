@@ -18,7 +18,7 @@ function NewReviewForm({ currentUser, restaurantId, onAddReview, setReviewClick}
             content
         }
 
-        fetch('https://enigmatic-island-27273.herokuapp.com/reviews', {
+        fetch('http://localhost:3000/reviews', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'

@@ -12,7 +12,7 @@ function Bookmark({bookmark, onRemoveBookmark, currentUser}) {
 
     function handleRemoveBookmark(){
         
-        fetch(`https://enigmatic-island-27273.herokuapp.com/bookmarks/${id}`, {
+        fetch(`http://localhost:3000/bookmarks/${id}`, {
             method: 'DELETE',
         })
         onRemoveBookmark(id)
@@ -34,9 +34,7 @@ function Bookmark({bookmark, onRemoveBookmark, currentUser}) {
                     <p>
                         {bookmark.restaurant.cuisine}
                     </p>
-
                     <br></br>
-
                     <p>
                         <Button  onClick={handleRemoveBookmark} size='tiny' icon basic color='teal'> 
                             <Icon name='bookmark'></Icon> Remove
@@ -46,6 +44,8 @@ function Bookmark({bookmark, onRemoveBookmark, currentUser}) {
             </List.Content>
             </List.Item>
         </List>
+       
+       
     );
 }
     

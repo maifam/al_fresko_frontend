@@ -13,7 +13,7 @@ function Review({review, onDeleteReview,currentUser}) {
 
 
     function handleDeleteClick(){
-        fetch(`https://enigmatic-island-27273.herokuapp.com/reviews/${id}`, {
+        fetch(`http://localhost:3000/reviews/${id}`, {
             method: 'DELETE',
         })
         onDeleteReview(id)
@@ -31,7 +31,7 @@ function Review({review, onDeleteReview,currentUser}) {
             content: editContent
         }
 
-        fetch(`https://enigmatic-island-27273.herokuapp.com/reviews/${id}`, {
+        fetch(`http://localhost:3000/reviews/${id}`, {
             method: 'PATCH', 
             headers: {
                 'Content-Type': 'application/json'
