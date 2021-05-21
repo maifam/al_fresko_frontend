@@ -8,9 +8,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 70px;
-  padding-right:70px;
-  /* use margin */
+  /* padding-left: 70px;
+  padding-right:70px; */
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 14px
 }
 
@@ -22,24 +24,32 @@ code {
 
 #logo-img {
   float: center;
-  padding-left: 50px;
+  /* padding-left: 50px; */
   /* padding-bottom: 10px; */
-  width: 350px;
+  margin-left: 30px;
+  /* margin-top: 20px; */
+  width: 330px;
 }
 
 .header-bar {
   background-color: #ffffff;
-  padding-left:100px;
-  padding-right:60px;
+  /* padding-left:100px;
+  padding-right:60px; */
+  margin-right: 60px;
+  margin-left: 50px;
   text-align: left;
-  height: 200px;
+  height: 250px;
+  /* width: 130px; */
   /* padding-bottom: -100px; */
 }
 
 .nav {
   float: right;
-  padding-right: 110px;
-  padding-top: 80px;
+  /* padding-right: 110px;
+  padding-top: 80px; */
+  margin-top: 130px;
+  /* margin-right: 110px; */
+  margin-right: 7.8%;
 }
 
 .map-container {
@@ -92,13 +102,15 @@ code {
 
 /* restaurants styling */
 #filter-bar {
-  padding-left: 150px;
+  /* padding-left: 150px;
   padding-bottom: 5px;
-  padding-top: 50px;
+  padding-top: 50px; */
+  margin-left: 8%;
 }
 
 #search-bar{
-  padding-right: 170px;
+  /* padding-right: 170px; */
+  margin-right: 11%;
 }
 
 #filter{
@@ -107,10 +119,11 @@ code {
 }
 
 #restaurant-list{
-  padding-top: 0em;
+  /* padding-top: 0em;
   padding-left: 130px;
   padding-right: 30px;
-  padding-bottom: 40px;
+  padding-bottom: 40px; */
+  margin-left: 8.5%;
   grid-template: auto 1fr auto / auto 1fr auto;
   box-shadow: rgb(26, 102, 102) !important;
   border-radius: 10px !important;
@@ -118,10 +131,13 @@ code {
 }
 
 .restaurant-card {
-  padding:16px;
-  box-shadow: rgb(125, 170, 170) !important;
-  border-radius: 5px !important;
+  /* padding:16px; */
+  margin-inline-end: 36px;
+  box-shadow: rgb(78, 134, 134) !important;
+  border-radius: 9px !important;
 }
+
+/* continue from here  */
 
 #card-info {
   text-align: left;
