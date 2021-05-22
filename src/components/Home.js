@@ -11,7 +11,7 @@ function Home({restaurants, position, currentUser}) {
                 center={position} 
                 zoom={13} 
                 scrollWheelZoom={true} 
-                style={{height:500, width: 900}}>
+                style={{height:600, width: 950}}>
                 <TileLayer
                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
