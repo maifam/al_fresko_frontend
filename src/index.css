@@ -23,7 +23,8 @@ code {
 #logo-img {
   float: center;
   margin-left: 30px;
-  width: 330px;
+  width: 390px;
+  height: 350px;
 }
 
 .header-bar {
@@ -37,13 +38,12 @@ code {
 .nav {
   float: right;
   margin-top: 130px;
-  /* margin-right: 110px; */
   margin-right: 7.8%;
 }
 
 .map-container {
   margin-left: 22%;
-  margin-top: 1%;
+  margin-top: .5%;
 }
 
 
@@ -103,10 +103,7 @@ code {
 }
 
 #restaurant-list{
-  /* padding-top: 0em;
-  padding-left: 130px;
-  padding-right: 30px;
-  padding-bottom: 40px; */
+  /* padding-top: 0em; */
   margin-left: 8.5%;
   grid-template: auto 1fr auto / auto 1fr auto;
   box-shadow: rgb(26, 102, 102) !important;
@@ -117,10 +114,8 @@ code {
 .restaurant-card {
   /* padding:16px; */
   margin-inline-end: 36px;
-  box-shadow: rgb(78, 134, 134) !important;
   border-radius: 9px !important;
 }
-
 
 #card-info {
   text-align: left;
@@ -142,8 +137,6 @@ code {
 }
 
 .info-box{
-  /* padding-top: 30px;
-  padding-left: 250px; */
   margin-top: 20px;
   margin-left: 15.5%;
   float: center;
@@ -219,12 +212,12 @@ code {
 
 #footer {
   font-family: 'Cedarville Cursive', cursive;
-  font-size: 18px;
+  font-size: 12px;
   text-align: center;
-  padding:18px;
+  padding:20px;
   color: #336b81;
-  bottom: 0;
   margin-bottom: 2px;
+  margin-top: 10px;
   width: 100%;
 
 }
