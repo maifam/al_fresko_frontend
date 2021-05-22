@@ -122,13 +122,11 @@ code {
   border-radius: 9px !important;
 }
 
-/* continue from here  */
 
 #card-info {
   text-align: left;
   align-content: center;
   padding: 15px;
-  color: #799351 !important;
   height: 420px;
   width: 300px;
   border-spacing: 2rem;
@@ -138,16 +136,17 @@ code {
 
 
 .restaurant-page-info{
-  padding-left: 80px;
+  margin-left: 135px;
   text-align: center;
   justify-content: center;
-  font-family: '';
   font-size: 18px;
 }
 
 .info-box{
-  padding-top: 30px;
-  padding-left: 250px;
+  /* padding-top: 30px;
+  padding-left: 250px; */
+  margin-top: 20px;
+  margin-left: 15.5%;
   float: center;
   /* font-size: 60px !important; */
 } 
@@ -155,8 +154,8 @@ code {
 .restaurant-name{
   font-family: 'Charm';
   font-size: 30px;
-  letter-spacing: 3px;
-  color:rgb(39, 158, 118);
+  letter-spacing: 4px;
+  color:rgb(110, 173, 170);
 } 
 
 .setup-info{
@@ -167,16 +166,16 @@ code {
 /* reviews styling */
 
 .reviews-list{
-  padding-left:200px;
+  margin-left: 13%;
   align-content: left;
-  padding-top: 20px;
-  padding-bottom:50px;
+  margin-top: 20px;
+  margin-bottom: 60px; 
   
 }
 
 #review-button{
   float: right;
-  padding-right: 450px;
+  margin-right: 20%;
 }
 
 #reviews-ribbon {
